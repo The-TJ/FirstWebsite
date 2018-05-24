@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3-style.css">
+<style>
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px)
+ {
+    .column, input[type=submit] 
+    {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+<nav class="w3-bar w3-black">
+    	<a href="index.html" class="w3-button w3-bar-item">Home</a>
+    	<a href="services.html" class="w3-button w3-bar-item">Services</a>
+    	<a href="tour.html" class="w3-button w3-bar-item">Tour</a>
+    	<a href="contact.html" class="w3-button w3-bar-item">Contact Us</a>
+</nav>
+
+<h2>Tour Booking Page</h2>
+
+<div style="text-align:center">
+  <h2>Book a Tour with us</h2>
+  <p>Fill the form below, to book your free tour</p>
+</div>
+<div class="row">
+<div class="column">
+    <img class="mySlides" src="images/tour-the-mecca-gym.jpg" width="620" height="450">
+    <img class="mySlides" src="images/tour_gym.jpg" width="620" height="450">
+    <img class="mySlides" src="images/CrossFit-RX-0167.jpg" width="620" height="450">
+    <div id="map" style="width:100%;height:500px"></div>
+</div>
+    <div class="column">
+      <form action="bookTour.php" method="POST">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" required placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" required placeholder="Your last name..">
+        <label for="date">Select Date</label>
+        <input type="date" name="date" required value="2018-04-20"> <br><br>
+        <label for="subject">Select Time</label>
+        <input type="time" name="time" required> <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--JavaScript to implement the slideshow-->
+<script type="text/javascript">
+    var index = 0;
+    show();
+    function show() {
+      var i;
+      var a = document.getElementsByClassName("mySlides");
+      for (i = 0; i < a.length; i++) {
+          a[i].style.display = "none";
+      }
+      index++;
+      if (index > a.length) {index = 1}
+      a[index-1].style.display = "block";
+      setTimeout(show, 3000);
+    }
+</script>
+
+<!--Footer that contains the hyperlinks to websites like facebook, twitter etc-->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+    <a href="https://www.facebook.com/"><i class="fa fa-facebook-official"></i></a>
+    <a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p"></i></a>
+    <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.flickr.com/"><i class="fa fa-flickr"></i></a>
+    <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+    <h5 style="text-align: center;">Crossfit © Tanmay Joshi</h5>
+</footer>	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+</body>
+</html>
